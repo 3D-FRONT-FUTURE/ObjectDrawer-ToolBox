@@ -99,4 +99,4 @@ single sofa | [download (.mov)](https://ossgw.alicdn.com/homeai-inner/model/f45b
 
 
 ## Acknowledgements
-Thanks to PlenOctree for the octree converter and online viewer. We take U2NeT as the segmentation algorithm. Please consider citing their papers and following their license.
+Thanks to [PlenOctree](https://github.com/sxyu/volrend) for the octree converter and online viewer. We take [U2NeT](https://github.com/xuebinqin/U-2-Net) as the segmentation algorithm. Please consider citing their papers and following their license.
