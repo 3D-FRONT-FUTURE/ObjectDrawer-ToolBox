@@ -99,14 +99,10 @@ single sofa | [download (.mov)](https://ossgw.alicdn.com/homeai-inner/model/f45b
 
 
 ## Acknowledgements
-Our project is inspired by researches in Neural Rendering, 3D reconstruction, Image segmentation, etc. 
+## Acknowledgements
+Thanks to PlenOctree[1] for the octree converter and online viewer. We take U2NeT[2] as the segmentation algorithm. Please consider citing their papers and following their license.
+
 ```
-[1] Mildenhall, B., Srinivasan, P. P., Tancik, M., Barron, J. T., Ramamoorthi, R., & Ng, R. (2020, August). Nerf: Representing scenes as neural radiance fields for view synthesis. In European conference on computer vision (pp. 405-421). Springer, Cham.
+[1] Yu, A., Li, R., Tancik, M., Li, H., Ng, R., & Kanazawa, A. (2021). Plenoctrees for real-time rendering of neural radiance fields. arXiv preprint arXiv:2103.14024.
 [2] Qin, X., Zhang, Z., Huang, C., Dehghan, M., Zaiane, O. R., & Jagersand, M. (2020). U2-Net: Going deeper with nested U-structure for salient object detection. Pattern Recognition, 106, 107404.
-[3] Schonberger, J. L., & Frahm, J. M. (2016). Structure-from-motion revisited. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 4104-4113).
-[4] Yu, A., Li, R., Tancik, M., Li, H., Ng, R., & Kanazawa, A. (2021). Plenoctrees for real-time rendering of neural radiance fields. arXiv preprint arXiv:2103.14024.
-[5] Hedman, P., Srinivasan, P. P., Mildenhall, B., Barron, J. T., & Debevec, P. (2021). Baking Neural Radiance Fields for Real-Time View Synthesis. arXiv preprint arXiv:2103.14645.
-[6] Sarlin, P. E., DeTone, D., Malisiewicz, T., & Rabinovich, A. (2020). Superglue: Learning feature matching with graph neural networks. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 4938-4947).
-[7] Liu, L., Gu, J., Zaw Lin, K., Chua, T. S., & Theobalt, C. (2020). Neural Sparse Voxel Fields. Advances in Neural Information Processing Systems, 33.
-[8] Isola, P., Zhu, J. Y., Zhou, T., & Efros, A. A. (2017). Image-to-image translation with conditional adversarial networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1125-1134).
 ```
