@@ -72,7 +72,7 @@ Delete pixels which are not belong to ground plane.
 
 Press ```w``` to delete or add pixels.  
 Press ```d``` to finish current annotation and start to label next image.  
-Press ```a``` to switch to previous image
+Press ```a``` to switch to previous image  
 Press ```esc``` to clear candidate regions
 
 
