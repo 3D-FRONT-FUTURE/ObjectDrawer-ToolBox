@@ -99,9 +99,4 @@ single sofa | [download (.mov)](https://ossgw.alicdn.com/homeai-inner/model/f45b
 
 
 ## Acknowledgements
-Thanks to PlenOctree[1] for the octree converter and online viewer. We take U2NeT[2] as the segmentation algorithm. Please consider citing their papers and following their license.
-
-```
-[1] Yu, A., Li, R., Tancik, M., Li, H., Ng, R., & Kanazawa, A. (2021). Plenoctrees for real-time rendering of neural radiance fields. arXiv preprint arXiv:2103.14024.
-[2] Qin, X., Zhang, Z., Huang, C., Dehghan, M., Zaiane, O. R., & Jagersand, M. (2020). U2-Net: Going deeper with nested U-structure for salient object detection. Pattern Recognition, 106, 107404.
-```
+Thanks to PlenOctree for the octree converter and online viewer. We take U2NeT as the segmentation algorithm. Please consider citing their papers and following their license.
