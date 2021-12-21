@@ -1,13 +1,14 @@
 import argparse
 import os
 from utils.label import startLabelZip
+from utils.processer import process
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
-        description='Parse a video to images, and generate pixel-wise mask for salient object.',
+        description='Parse a video to images, and generate pixel-wise ground plane masks.',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument(
@@ -18,6 +19,7 @@ if __name__ == "__main__":
     if not os.path.exists(opt.video_path):
         print("Invaid path for %s",  opt.video_path)
         exit(-1)
+    process(opt.video_path)
 
     video_dir = os.path.dirname(opt.video_path)
     case_id = os.path.basename(opt.video_path).split('.')[0]

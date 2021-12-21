@@ -1,43 +1,20 @@
 # ObjectDrawer-ToolBox
 
-ObjectDrawer-ToolBox is a graphical image annotation tool to generate segmentation masks for a 3D object reconstruction system, [Object Drawer](https://objectdrawer.alibaba.com/index.html).
+ObjectDrawer-ToolBox is a graphical image annotation tool to generate ground plane masks for a 3D object reconstruction system, [Object Drawer](https://objectdrawer.alibaba.com/index.html).
 
 ## Prerequisites
-* Python 3
-* NVIDIA GPU + CUDA CuDNN
+* Python 3.8
 * ffmpeg
 
 ## Requirements
 ```
 opencv-python
-torch==1.4.0  
 ffmpeg-python==0.2.0
 ```
 
 
 ## Getting Started
-### Download segmentation models
-
-* Download the segmentation models from the [DropBox](https://www.dropbox.com/sh/oymyvapnmmam917/AABVB5Ibei87HQ0ZYNUMggCZa?dl=0)
-* replace the folder `asserts` in `utils/asserts` with downloaded `asserts`.
-
-### Step 1
-Sample frames from a video, and run image segmentation for foreground object.
-* seg_type: 
-  * 0 -- small objects (e.g. shoes, toy, cup and so on)
-  * 1 -- furnitures(e.g. chair, table, sofa, bed and so on)
-```
-python seg_video.py \
-  --video_path /path/to/your/videos.mp4 \
-  --seg_type 1
-```
-
-### Step 2
-
-Annotate images based on the segmentation results at Step 1. There are 3 type data needed to label at this step:
-* The front view of the object: select one image as front view.
-* Ground plane mask: label 3 images and only keep ground pixels in these images.
-* Correct segmentation results at Step 1.
+Given the video captured by conventional recording devices, the ObjectDrawer-ToolBox is used to sample frames from the video and label the ground plane masks. In the ground plane mask task, you need to label 3 images and only keep ground pixels in these images.
 
 Please run
 ```
@@ -45,47 +22,28 @@ python label_image.py \
   --video_path /path/to/your/videos.mp4 
 ```
 
-#### 1. Select the front view
+#### How to annotate ground plane
 
-Click the image which is closest to front view
-![title](imgs/1.gif)
+1. Draw a polygon to cover the pixels area which are not belong to groud plane. Tips: `red / black` line denotes a unfinished / finished polygon.
+2. Press `w` to delete non-ground pixels when finished a polygon drawing.
+3. Repeat the step 1 & 2, until there are only ground plane areas in the image.
 
-
-#### 2. Annotate ground plane
-
-Delete pixels which are not belong to ground plane.
-
+Operation Tips:
 * Press ```w``` to delete pixels.  
 * Press ```d``` to finish current annotation and start to label next image.  
 * Press ```esc``` to clear candidate regions
 
 **select pixels**
 
+![title](imgs/1.jpg)
+
+
+**delete pixels**
+
 ![title](imgs/2.jpg)
 
-
-**delete pixels**
-
-![title](imgs/3.jpg)
-
-#### 3. Correct image segmentation at Step 1
-
-Press ```w``` to delete or add pixels.  
-Press ```d``` to finish current annotation and start to label next image.  
-Press ```a``` to switch to previous image  
-Press ```esc``` to clear candidate regions
-
-
-**select pixels**
-
-![title](imgs/4.jpg)
-
-**delete pixels**
-
-![title](imgs/5.jpg)
-
 ### Annotation result
-After Step 1 & Step 2, a zip file named "label_${videos}.zip" is generated in same directory as the input video.  
+After ground plane annotation, a zip file named "label_${videos}.zip" is generated in same directory as the input video.  
 Upload the video ("videos.mp4") and zip file on the website of [Object Drawer](https://objectdrawer.alibaba.com/index.html). 
 
 ## Examples
@@ -93,8 +51,8 @@ To clarify the label data format, we provided examples `video` & `label file`. Y
 
 Name | Video | Label File
 ---|---|---
-multi-seat sofa | [download (.mp4)](https://ossgw.alicdn.com/homeai-inner/model/2b3ea8c8-6cb9-4ba4-9ca5-51e6bf32edb5.mp4) | [download (.zip)](https://ossgw.alicdn.com/homeai-inner/model/030ae8f6-bdbb-4e5f-be56-d94dd153b0c0.zip)
-single sofa | [download (.mov)](https://ossgw.alicdn.com/homeai-inner/model/f45bb3b4-15da-41bc-8d89-29ceb6badf58.mov) | [download (.zip)](https://ossgw.alicdn.com/homeai-inner/model/6da55f6a-0288-43f4-94d9-1f2dd03005c3.zip)
+multi-seat sofa | [download (.mp4)](https://ossgw.alicdn.com/homeai-inner/model/2b3ea8c8-6cb9-4ba4-9ca5-51e6bf32edb5.mp4) | [download (.zip)](http://homeai.oss-cn-beijing.aliyuncs.com/homelab/shuqi/object_drawer_website/examples/030ae8f6-bdbb-4e5f-be56-d94dd153b0c0.zip)
+single sofa | [download (.mov)](https://ossgw.alicdn.com/homeai-inner/model/f45bb3b4-15da-41bc-8d89-29ceb6badf58.mov) | [download (.zip)](http://homeai.oss-cn-beijing.aliyuncs.com/homelab/shuqi/object_drawer_website/examples/6da55f6a-0288-43f4-94d9-1f2dd03005c3.zip)
 
 
 
